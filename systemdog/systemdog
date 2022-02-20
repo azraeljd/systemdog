@@ -1,0 +1,47 @@
+# System Dog
+# A system information fetcher.
+#
+# Copyright (c) 2022 Azrael JD.
+#
+# This software is freely usable and distributable under
+# the terms of the Azratek Free and Open Source Software
+# License.
+#
+# Disclaimer:
+# THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT ANY WARRANTY. IN NO EVENT SHALL
+# THE AUTHORS, CONTRIBUTORS, NOR THE COPYRIGHT HOLDERS BE LIABLE FOR ANY
+# DAMAGE CAUSED BY THE USE OF THIS SOFTWARE.
+
+#!/bin/bash
+
+version="0.1"
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -h|--help)
+          echo "System Dog"
+          echo "A system information fetcher."
+          echo
+          echo "Usage:"
+          echo "systemdog [options]"
+          echo
+          echo "Options:"
+          echo "-h, --help: Print this text and exit."
+          echo "-v, --version: Print System Dog version."
+          exit 0
+          ;;
+        -v|--version)
+          echo "$version"
+          exit 0
+          ;;
+    esac
+  shift
+done
+
+shell="$SHELL"
+shell="${shell/*"/"}"
+
+echo "$(whoami)"@"$(uname -n)"
+echo OS: "$(uname -o)"
+echo Kernel: "$(uname -r)"
+echo Shell: "$shell"
