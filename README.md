@@ -21,9 +21,6 @@ wget https://raw.githubusercontent.com/azraeljd/systemdog/main/systemdog/systemd
 sudo cp systemdog /bin
 ```
 ## Compatibility
-System Dog is tested and working on these shells and operating systems:
-### Shells
-- Bash
-- Zsh
-### Operating Systems
-- Linux
+System Dog is tested and working on these operating systems:
+- Linux (Bash and ZSH)
+- FreeBSD (Bash and ZSH)
